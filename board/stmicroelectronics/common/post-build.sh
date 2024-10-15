@@ -13,4 +13,10 @@ fixup_extlinux_dtb_name()
 	sed -i -e "s/%DTB_NAME%/${DTB_NAME}/" ${EXTLINUX_PATH}
 }
 
+cgroup2()
+{
+grep -q "^none" $ROOT/etc/fstab || echo -e "none\t\t/sys/fs/group\tgroup2\tdefaults\t0\t0" >> $ROOT/etc/fstab
+}
+
 fixup_extlinux_dtb_name $@
+cgroup2 $@
