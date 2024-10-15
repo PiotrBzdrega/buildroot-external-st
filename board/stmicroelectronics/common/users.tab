@@ -1,0 +1,11 @@
+#:user          uid     user group      gid     pass    home            shell           groups
+administrator   10000   administrator   10000   =admin  /home/admin     /bin/sh         sshuser
+syndis          10001   syndis          10001   *       -               -               config,logger,sdwrite,shadow
+config          10002   config          10002   *       -               -               syndis
+guest           10003   guest           10003   *       -               -               -
+logger          10004   logger          10004   *       -               -               -
+-               -       sshuser         10005   *       -               -               -
+gpiouse         10006   gpiouse         10006   *       -               /bin/sh         config,logger,administrator
+usbuse          10007   usbuse          10007   *       -               /bin/sh         config,logger,administrator
+-               -       sdwrite         10008   *       -               -               -
+-               -       shadow          10009   *       -               -               -
