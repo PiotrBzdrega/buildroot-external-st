@@ -15,7 +15,7 @@ fixup_extlinux_dtb_name()
 
 cgroup2()
 {
-        grep -q "^none" $TARGET_DIR/etc/fstab || echo -e "none\t\t/sys/fs/group\tgroup2\tdefaults\t0\t0" >> $TARGET_DIR/etc/fstab
+        grep -q "^none" $TARGET_DIR/etc/fstab || echo -e "none\t\t/sys/fs/cgroup\tcgroup2\tdefaults\t0\t0" >> $TARGET_DIR/etc/fstab
 }
 
 fixup_extlinux_dtb_name $@
